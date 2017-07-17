@@ -1,0 +1,357 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\dev\RecLafti\vvvv-Deploy\packs\RecLafti\girlpower\patchedShader.v4p" systemname="patchMeTheShaderExperimental" filename="E:\dev\dx11-vvvv\ShaderGraph\patchMeTheShaderExperimental.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="5295" top="1035" width="12045" height="13845">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="21" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="480" top="8085" width="7845" height="4245">
+   </BOUNDS>
+   <BOUNDS type="Node" left="480" top="8085" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" componentmode="InAWindow" id="25">
+   <BOUNDS type="Node" left="7350" top="7455" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7350" top="7455" width="2550" height="2535">
+   </BOUNDS>
+   <BOUNDS type="Window" left="17269" top="3934" width="8470" height="7707">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="View" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.40685,0.40685,0.40685,1.00000|">
+   </PIN>
+   <PIN pinname="VSync" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Grid (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Grid (DX11.Geometry)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="5295" top="6060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="4710" top="6060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mode" slicecount="1" values="Blend">
+   </PIN>
+   </NODE>
+   <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="10200" top="6930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Uniform Scale" slicecount="1" values="0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Transform Out" dstnodeid="25" dstpinname="Aspect Ratio">
+   </LINK>
+   <PACK Name="vvvv-Message" Version="2.9.0">
+   </PACK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="37">
+   <BOUNDS type="Node" left="8505" top="90" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="38">
+   <BOUNDS type="Node" left="8505" top="525" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Shape" slicecount="1" values="Sine">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Output" dstnodeid="38" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="8505" top="945" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="0.17">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.53">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Output" dstnodeid="39" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="56">
+   <BOUNDS type="Box" left="7014" top="511" width="693" height="210">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7014" top="511" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.44">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="57">
+   <BOUNDS type="Box" left="9450" top="2142" width="693" height="210">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9450" top="2142" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-0.04">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <NODE systemname="Vector2 (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Vector2 (DX11.ShaderGraph)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="5880" top="1725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Var Name" slicecount="1" values="Center">
+   </PIN>
+   <PIN pinname="ValueXY" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default ValueXY" slicecount="2" values="0.5,0.5">
+   </PIN>
+   <BOUNDS type="Box" left="5880" top="1725">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Circular (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="Circular (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="6990" top="2490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Radius" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Center" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="17" dstpinname="Center">
+   </LINK>
+   <NODE id="16" systemname="Float (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Float (DX11.ShaderGraph)" componentmode="Hidden">
+   <BOUNDS type="Node" left="7815" top="1620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" values="-0.26">
+   </PIN>
+   <PIN pinname="Var Name" slicecount="1" values="CircleRadius">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" visible="1" values="0.512634573194116">
+   </PIN>
+   <BOUNDS type="Box" left="7815" top="1620">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="17" dstpinname="Radius">
+   </LINK>
+   <NODE systemname="Outline (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="Outline (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="5475" top="3870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Radius" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Thickness" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Quadratic (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="Quadratic (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="5880" top="2520" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Radius" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="11" dstpinname="Center">
+   </LINK>
+   <NODE systemname="Color (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Color (DX11.ShaderGraph)" componentmode="Hidden" id="10">
+   <BOUNDS type="Node" left="6615" top="4155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" values="|0.40985,0.65709,0.49334,1.00000|">
+   </PIN>
+   <PIN pinname="Var Name" slicecount="1" values="RingColor">
+   </PIN>
+   </NODE>
+   <NODE systemname="Color (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Color (DX11.ShaderGraph)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="7155" top="4155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" values="|0.39797,0.45329,0.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Var Name" slicecount="1" values="BodyColor">
+   </PIN>
+   </NODE>
+   <NODE id="8" systemname="Float (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Float (DX11.ShaderGraph)" componentmode="Hidden">
+   <BOUNDS type="Node" left="6660" top="1725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Value" slicecount="1" values="-0.26">
+   </PIN>
+   <PIN pinname="Var Name" slicecount="1" values="QuadRadius">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" visible="1" values="0.37">
+   </PIN>
+   <BOUNDS type="Box" left="6660" top="1725">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="56" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Default Value">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="11" dstpinname="Radius">
+   </LINK>
+   <NODE systemname="Intersect (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="Intersect (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="6285" top="3165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output" dstnodeid="7" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="15" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Blend (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Blend (DX11.ShaderGraph)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="6435" top="5730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Color" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Blend Per Channel" visible="1">
+   </PIN>
+   <PIN pinname="Color 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Blend" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE systemname="Color (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Color (DX11.ShaderGraph)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="4650" top="5295" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" values="|1.00000,0.02782,0.91032,0.00000|">
+   </PIN>
+   <PIN pinname="Var Name" slicecount="1" values="BackColor">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="6" dstpinname="Color">
+   </LINK>
+   <NODE id="2" systemname="DF2DToColor (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="DF2DToColor (DX11.ShaderGraph)" componentmode="Hidden">
+   <PIN pinname="Distance Field" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Node" left="6120" top="4680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="2" dstpinname="Distance Field">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="2" dstpinname="Color">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="2" dstpinname="Background Color">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="6" dstpinname="Color 2">
+   </LINK>
+   <NODE systemname="PixelShader (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="PixelShader (DX11.ShaderGraph)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="6180" top="6465" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Shader" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Shader Code" dstnodeid="21" dstpinname="Input String">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Layer" dstnodeid="25" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Geometry Out" dstnodeid="35" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Render State" dstnodeid="35" dstpinname="Render State">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="35" dstpinname="Shader">
+   </LINK>
+   <NODE systemname="Float (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Float (DX11.ShaderGraph)" componentmode="Hidden" id="40">
+   <BOUNDS type="Node" left="5116" top="3154" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" values="0.05">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Output" dstnodeid="15" dstpinname="Thickness">
+   </LINK>
+   <NODE systemname="IsInShape (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="IsInShape (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="8535" top="4155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Distance Field" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Output" dstnodeid="6" dstpinname="Blend">
+   </LINK>
+   <NODE systemname="Grow (DX11.ShaderGraph DistanceField2D)" filename="..\nodes\plugins\RecLafti.dll" nodename="Grow (DX11.ShaderGraph DistanceField2D)" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="8010" top="3540" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Delta" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="53" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="Output" dstnodeid="41" dstpinname="Distance Field">
+   </LINK>
+   <NODE systemname="Float (DX11.ShaderGraph)" filename="..\nodes\plugins\RecLafti.dll" nodename="Float (DX11.ShaderGraph)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="8505" top="2912" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default Value" slicecount="1" visible="1" values="-0.07">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="54" dstpinname="Default Value">
+   <LINKPOINT x="8939" y="2933">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Output" dstnodeid="53" dstpinname="Delta">
+   </LINK>
+   <PACK Name="vvvv-ZeroMQ" Version="0.5.7">
+   </PACK>
+   </PATCH>
